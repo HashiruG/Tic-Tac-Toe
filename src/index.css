@@ -1,13 +1,65 @@
-body {
+.app{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.square{
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  
 }
+
+
+.board{
+  display: flex;
+  width: 300px;
+  height: 300px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+.circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid red;
+}
+.cross{
+ 
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative
+  
+}
+.cross::before, .cross::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.cross::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+
+
